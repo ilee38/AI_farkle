@@ -164,15 +164,15 @@ public class FarklePlayer implements Runnable {
     		
     	//	if(expectedReward < turnScore) return true;
     //	}
-    //	return false;
+     //	return false;
     }
     
     
 /*
- * This table contains the sum of + rewards, farkle count given re-
+ * This table contains the average of + rewards, farkle count given re-
  * maining number of dice, the probabilities of Farkle given
  * remaining dice, and the probability of Scoring given the remaining
- * number of dice. 
+ * number of dice (i.e. 1 - P(farkle)). 
  * The array's row index maps to the number of dice to be rolled,
  * and columns 0 thru 3 correspond to: the sum of positive rewards,
  * farkle count, P(farkle) and P(scoring) respectively.
@@ -191,27 +191,27 @@ public class FarklePlayer implements Runnable {
     	table[1][2] = 2.0/3.0; //0.6667;
     	table[1][3] = 1.0 - (2.0/3.0); //0.3333;
     	
-    	table[2][0] = 1800.0;
+    	table[2][0] = 1800.0/2.0;
     	table[2][1] = 16.0;
     	table[2][2] = 1.0/2.25; //0.4348;
     	table[2][3] = 1.0 - (1.0/2.25); //0.5652;
     	
-    	table[3][0] = 18750.0;
+    	table[3][0] = 18750.0/3.0;
     	table[3][1] = 60.0;
     	table[3][2] = 1.0/3.6; //0.2778;
     	table[3][3] = 1.0 - (1.0/3.6); //0.7222;
     	
-    	table[4][0] = 183150.0;
+    	table[4][0] = 183150.0/4.0;
     	table[4][1] = 204.0;
     	table[4][2] = 1.0/6.35; //0.1563;
     	table[4][3] = 1.0 - (1.0/6.35); //0.8438;
     	
-    	table[5][0] = 1675800.0;
+    	table[5][0] = 1675800.0/5.0;
     	table[5][1] = 600.0;
     	table[5][2] = 1.0/13.0; //0.0769;
     	table[5][3] = 1.0 - (1.0/13.0);//0.9231;
     	
-    	table[6][0] = 14411250.0;
+    	table[6][0] = 14411250.0/6.0;
     	table[6][1] = 1440.0;
     	table[6][2] = 1.0/42.0; //0.0231;
     	table[6][3] = 1.0 - (1.0/42.0); //0.9769;
